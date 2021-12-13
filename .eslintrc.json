@@ -20,7 +20,8 @@
     "no-use-before-define": "off",
     "multiline-ternary": "off",
     "react/react-in-jsx-scope": 0,
-    "react/jsx-uses-react": 0,
-    "react/display-name": false
+    "react/jsx-uses-react": "error",
+    "react/display-name": "off",
+    "react/jsx-uses-vars": "error"
   }
 }
