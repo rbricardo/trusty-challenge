@@ -1,20 +1,26 @@
-import React, { useState, createContext, useCallback } from 'react';
-import initialMessages from './constants/initialMessages';
+import React, { useState, createContext, useMemo } from 'react'
+import initialMessages from './constants/initialMessages'
 
-const LatestMessagesContext = createContext({});
+const LatestMessagesContext = createContext({})
 
-export default LatestMessagesContext;
+export default LatestMessagesContext
 
 export function LatestMessages({ children }) {
-  const [messages, setMessages] = useState(initialMessages);
-
-  const setLatestMessage = useCallback((userId, value) => {
-    setMessages({ ...messages, [userId]: value });
-  }, [messages]);
+  const [messages, setMessages] = useState(initialMessages)
 
   return (
-    <LatestMessagesContext.Provider value={{ messages, setLatestMessage }}>
+    <LatestMessagesContext.Provider
+      value={useMemo(
+        () => ({
+          messages,
+          setLatestMessage: (userId, value) => {
+            setMessages({ ...messages, [userId]: value })
+          }
+        }),
+        [messages]
+      )}
+    >
       {children}
     </LatestMessagesContext.Provider>
-  );
+  )
 }
