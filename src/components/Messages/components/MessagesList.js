@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, memo } from 'react'
 import TypingMessage from './TypingMessage'
 import Message from './Message'
 

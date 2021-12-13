@@ -1,62 +1,17 @@
-import React, {
-  useContext,
-  useEffect,
-  useRef,
-  useReducer,
-  memo,
-  useState
-} from 'react'
+import React, { useContext, useEffect, useReducer } from 'react'
 import io from 'socket.io-client'
 import useSound from 'use-sound'
 import config from '../../../config'
 import LatestMessagesContext from '../../../contexts/LatestMessages/LatestMessages'
-import TypingMessage from './TypingMessage'
 import Header from './Header'
-import Footer from './Footer'
-import Message from './Message'
 import InitialBotMessage from '../../../common/constants/initialBottyMessage'
+import MessagesList from './MessagesList'
+import Composer from './Composer'
 import '../styles/_messages.scss'
 
 const socket = io(config.BOT_SERVER_ENDPOINT, {
   transports: ['websocket', 'polling', 'flashsocket']
 })
-
-const MessagesList = memo(({ messages, isTyping }) => {
-  const messagesContainerRef = useRef()
-  useEffect(() => {
-    messagesContainerRef.current.scrollTop =
-      messagesContainerRef.current.scrollHeight
-  }, [messages])
-  return (
-    <div
-      ref={messagesContainerRef}
-      className="messages__list"
-      id="message-list"
-    >
-      {messages.map((msg) => {
-        return <Message message={msg} botTyping={isTyping} />
-      })}
-      {isTyping && <TypingMessage />}
-    </div>
-  )
-})
-
-function Composer({ sendMessage }) {
-  const [message, setMessage] = useState('')
-
-  return (
-    <Footer
-      message={message}
-      sendMessage={() => {
-        setMessage('')
-        sendMessage(message)
-      }}
-      onChangeMessage={(e) => {
-        setMessage(e.target.value)
-      }}
-    />
-  )
-}
 
 const messagesReducer = (state, event) => {
   switch (event.type) {

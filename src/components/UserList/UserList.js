@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import cx from 'classnames';
-import LatestMessagesContext from '../../contexts/LatestMessages/LatestMessages';
-import UserProfile from '../../common/components/UserProfile/UserProfile';
-import USERS from './constants/users';
-import './_user-list.scss';
+import React, { useContext } from 'react'
+import cx from 'classnames'
+import LatestMessagesContext from '../../contexts/LatestMessages/LatestMessages'
+import UserProfile from '../../common/components/UserProfile/UserProfile'
+import USERS from './constants/users'
+import './_user-list.scss'
 
 function User({ icon, name, lastActive, isOnline, userId, color }) {
-  const { messages } = useContext(LatestMessagesContext);
+  const { messages } = useContext(LatestMessagesContext)
 
   return (
     <div className="user-list__users__user">
@@ -21,7 +21,7 @@ function User({ icon, name, lastActive, isOnline, userId, color }) {
         <p>{messages[userId]}</p>
       </div>
     </div>
-  );
+  )
 }
 
 export default function UserList() {
@@ -35,8 +35,10 @@ export default function UserList() {
         <i className="fas fa-cog" />
       </div>
       <div className="user-list__users">
-        {USERS.map(user => <User key={user.name} {...user} />)}
+        {USERS.map((user) => (
+          <User key={user.name} {...user} />
+        ))}
       </div>
     </div>
-  );
+  )
 }
