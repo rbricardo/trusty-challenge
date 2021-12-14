@@ -44,7 +44,7 @@ Open your browser and type http://localhost:3000/
 
 ## Aditional
 
-- Added test for Messages useReducer
+- Added test for Messages
 - Set Eslint / Prettier
 
 <br>
@@ -56,21 +56,20 @@ Open your browser and type http://localhost:3000/
 
 <br>
 
-```
+```shell
 $ git clone git@github.com:alexgurr/botty.git
 ```
 
 After clone this project, we need to run it localy
 
-```
+```shell
 $ yarn install && yarn start
 ```
 
 Botty will run on port 4001, so go to _src/config.js_ and replace:
 <br>
 <br>
-`BOT_SERVER_ENDPOINT: 'https://botty.alexgurr.com'`
-<br>
-to
-
-`BOT_SERVER_ENDPOINT: 'http://localhost:4001'`
+```diff
+- BOT_SERVER_ENDPOINT: 'https://botty.alexgurr.com'
++ BOT_SERVER_ENDPOINT: 'http://localhost:4001'
+```
