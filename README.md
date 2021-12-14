@@ -52,7 +52,7 @@ Open your browser and type http://localhost:3000/
 
 ## Important!
 
-### As you know, we are using a bot to simulate a chat. Sometimes the bot server dies (you can check if it's alive here: https://botty.alexgurr.com). So if this happens, please, folow the steps below: **(make sure you are using node version 12)**
+As you know, we are using a bot to simulate a chat. Sometimes the bot server dies (you can check if it's alive here: https://botty.alexgurr.com). So if this happens, please, folow the steps below: **(make sure you are using node version 12)**
 
 <br>
 
