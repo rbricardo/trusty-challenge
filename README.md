@@ -37,8 +37,13 @@ Open your browser and type http://localhost:3000/
 
 ## Running Tests
 
+Unit
 ```shell
 $ yarn test
+```
+End to end
+```shell
+$ yarn cypress
 ```
 <br>
 <br>
