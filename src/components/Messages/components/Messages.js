@@ -13,7 +13,7 @@ const socket = io(config.BOT_SERVER_ENDPOINT, {
   transports: ['websocket', 'polling', 'flashsocket']
 })
 
-const messagesReducer = (state, event) => {
+export const messagesReducer = (state, event) => {
   switch (event.type) {
     case 'STARTED_TYPING':
       return { ...state, isTyping: true }
@@ -57,9 +57,11 @@ function Messages({ user = 'bot' }) {
         message: InitialBotMessage
       }
     })
+
     const onTyping = () => {
       dispatch({ type: 'STARTED_TYPING' })
     }
+
     const onMessage = (message) => {
       dispatch({
         type: 'MESSAGE_RECEIVED',
