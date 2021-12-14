@@ -66,6 +66,7 @@ $ yarn test
 
 - Added test for Messages
 - Set Eslint / Prettier
+- The challenge documentation asked to use `useCallback` hook, but it was not neccessary since the app was not having re-render issues. I just added `memo` for a component to avoid uneccessary re-renders.
 
 <br>
 <br>
