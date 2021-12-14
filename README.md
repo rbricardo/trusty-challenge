@@ -1,56 +1,39 @@
-# Chatter Coding Challenge 🤖 &nbsp; ![hard](https://img.shields.io/badge/-Hard-red) ![time](https://img.shields.io/badge/%E2%8F%B0-60m-blue)
+# Trusty Challenge
 
-&nbsp;
-# Goals / Outcomes ✨
-- To test knowledge of using sockets (socket.io) and events
-- Understanding of callbacks, hooks and function references
+## Setup
 
-&nbsp;
-# Pre-requisites ✅
-None
+## Table of Contents
 
-&nbsp;
-# Requirements 📖
-Most of the work needs to be done in the `Messages` components.
+- [About](#About)
+- [Install](#Install)
+- [Running the Project](#Running-the-Project)
+- [Demo](#demo)
 
-- Implement hooks such as `useEffect` and `useCallback` to handle events
-- Scroll to the bottom of the messages list when sending/receiving a message
-- Show the initial Botty message by default (can be found in `common/constants`)
-- Use **sockets** to:
-  - Send the user's message to Botty
-  - Show a typing message when Botty is typing
-  - Handle incoming Botty messages and display them
+### About
 
-&nbsp;
-# Botty Socket Events
-See the [Botty server](https://github.com/alexgurr/botty) documentation for more information.
-- `bot-typing`: Emitted by Botty when they are typing in response to a user message.
-- `bot-message`: Emitted by Botty with a message payload in response to a user message.
-- `user-message`: Emitted by you/the client with a messsage payload
+*Trusty Challenge* is a chat that we are using socket.io to simulate a conversation with a BOT.
+<br>
+<br>
+Send a messages to Botty, then the app will show a typing message when Botty is typing and handle incoming Botty messages and display them
+### Install
 
-&nbsp;
-# Message Classes
-We've provided `Message` components and classes. Here's some information about the classes.
-- `.message--last`: The last message in a group
-- `.message--typing`: The message the user sees when the recipient is typing
-- `.message--me`: Denotes a user message
+```shell
+$ yarn install or yarn
+```
 
-&nbsp;
-# Think about 💡
-- References to functions and current hook state
-- How to interact with socket.io, events and payloads
-- How React contexts work
+## Running the Project
 
-&nbsp;
-# What's Already Been Done 🏁
-- Socket setup/configuration with the [Botty server](https://github.com/alexgurr/botty) ([botty.alexgurr.com](https://botty.alexgurr.com))
-- All UX and UI, including for messages
-- All components, including a message and typing message component
-- A context for setting the latest message, which will change the preview in the left user list
-- Hooks for playing send/receive sounds
+```shell
+$ yarn start
+```
 
-&nbsp;
-# Screenshots 🌄
-&nbsp;
-![screenshot-desktop](https://puu.sh/Hp0C2/cb14e843de.png)
-<img alt="screenshot-mobile" width=400 src="https://puu.sh/HoYEw/9b760f91f7.png" />
+Open your browser and type http://localhost:3000/
+<br>
+<br>
+
+### Demo
+
+<br>
+<p align="center"><img src="https://raw.githubusercontent.com/rbricardo/trusty-challenge/main/public/chatbot.gif"></p>
+
+### *Before start, you need to know that we are using a bot to simulate a chat. Sometimes the server dies (you can check if it's alive here: https://botty.alexgurr.com). So if this happens, please, foloow the steps below:*
