@@ -50,6 +50,17 @@ $ yarn test
 <br>
 <br>
 
+## Changed and Created Files
+
+- Messages.js
+- Messages.test.js
+- MessagesList.js
+- Composer.js
+- Footer.js
+
+<br>
+<br>
+
 ## Aditional
 
 - Added test for Messages
